@@ -2,10 +2,6 @@
 using Exiled.API.Features;
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Events = Exiled.Events.Handlers;
 
@@ -27,11 +23,15 @@ namespace Scp330Control
             Singleton = this;
             Handler = new EventHandlers();
 
+            Events.Server.RoundStarted += Handler.OnRoundStarted;
+            Events.Player.InteractingDoor += Handler.OnInteractingDoor;
             Events.Player.PickingUpScp330 += Handler.OnPickingUpScp330;
             base.OnEnabled();
         }
         public override void OnDisabled()
         {
+            Events.Server.RoundStarted -= Handler.OnRoundStarted;
+            Events.Player.InteractingDoor -= Handler.OnInteractingDoor;
             Events.Player.PickingUpScp330 -= Handler.OnPickingUpScp330;
 
             Singleton = null;

@@ -11,7 +11,7 @@ namespace Scp330Control
     {
         public override string Name { get; } = "Scp330Control";
         public override string Author { get; } = "Thunder";
-        public override Version Version { get; } = new Version(1, 0, 1);
+        public override Version Version { get; } = new Version(1, 0, 2);
         public override Version RequiredExiledVersion { get; } = new Version(2, 1, 9);
         public override PluginPriority Priority { get; } = PluginPriority.High;
 

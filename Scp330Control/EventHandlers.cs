@@ -36,6 +36,11 @@ namespace Scp330Control
         }
         public void OnPickingUpScp330(PickingUpScp330EventArgs ev)
         {
+            if (Scp330Control.Singleton.Config.AllowedCandies.Count == 0)
+            {
+                ev.IsAllowed = false;
+                return;
+            }
             if (!Scp330Control.Singleton.Config.AllowedCandies.Contains(ev.ItemId))
             {
                 int index = rng.Next(0, Scp330Control.Singleton.Config.AllowedCandies.Count - 1);

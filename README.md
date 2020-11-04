@@ -1,3 +1,6 @@
+## ARCHIVED
+Due to SCP:SL removing SCP-330, this plugin is now obsolete and will no longer function. It's been fun to see people using my plugin to disable the infamous pink candy. <3
+
 ## SCP-330 Control
 Simple SCP:SL Exiled plugin allowing server owners to decide what candies are able to spawn at SCP-330, as well as control over the room itself.
 
